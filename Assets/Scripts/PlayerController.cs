@@ -28,13 +28,10 @@ public class PlayerController : BaseController
 
         //바라보는 뱡향(a&<, d&>)에 따라 direction 바뀌도록
         if(moveX == 0) //위, 아래로 움직이거나 움직이지 않을 때 
-        {
-            Debug.Log("애니메이션 정지");
-        }
-        else if(moveX != 0) 
+        { }
+        else if(moveX != 0)//좌,우,대각선으로 움직일 때
         {
             Rotate(movementDirection);
-            Debug.Log(movementDirection);
         }
     }
 }
