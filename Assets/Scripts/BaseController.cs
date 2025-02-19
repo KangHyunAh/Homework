@@ -16,6 +16,8 @@ public class BaseController : MonoBehaviour
     private Vector2 knockback = Vector2.zero;
     private float knockbackDuration = 0.0f;
 
+    public GameObject GameLoadingText;
+
     protected virtual void Awake() 
     { 
         _rigidbody = GetComponent<Rigidbody2D>();

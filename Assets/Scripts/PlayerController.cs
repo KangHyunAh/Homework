@@ -10,6 +10,7 @@ public class PlayerController : BaseController
     {
         base.Start();
         camera = Camera.main;
+        GameLoadingText.SetActive(false);
     }
     private void Update()
     {
