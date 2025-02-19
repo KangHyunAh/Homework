@@ -11,6 +11,10 @@ public class PlayerController : BaseController
         base.Start();
         camera = Camera.main;
     }
+    private void Update()
+    {
+        HandleAction();
+    }
 
     protected override void HandleAction() 
     {
@@ -28,8 +32,9 @@ public class PlayerController : BaseController
             Debug.Log("애니메이션 정지");
         }
         else if(moveX != 0) 
-        { 
-        
+        {
+            Rotate(movementDirection);
+            Debug.Log(movementDirection);
         }
     }
 }
