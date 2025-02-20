@@ -31,13 +31,17 @@ public class Obstacle : MonoBehaviour
 
         return placePosition;
     }
+    Game1GameManager game1GameManager;
+
     void Start()
     {
-        
+        game1GameManager = Game1GameManager.Instance;
     }
 
-    void Update()
+    private void OnTriggerExit2D(Collider2D other)
     {
-        
+        Minigame1Player player = other.GetComponent<Minigame1Player>();
+        if (player != null)
+            game1GameManager.AddScore(1);
     }
 }

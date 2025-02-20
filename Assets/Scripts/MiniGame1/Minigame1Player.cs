@@ -16,8 +16,12 @@ public class Minigame1Player : MonoBehaviour
 
     public bool godMode = false;
     
+    Game1GameManager game1GameManager = null;
+    
     void Start()
     {
+        game1GameManager = Game1GameManager.Instance;
+
         _rigidbody = transform.GetComponent<Rigidbody2D>();
 
         if( _rigidbody == null ) 
@@ -34,13 +38,13 @@ public class Minigame1Player : MonoBehaviour
             if(deathCooldown <= 0) 
             {
                 //안내 UI 띄우기
-                if (Input.GetKeyDown(KeyCode.Space) || (Input.GetMouseButtonDown(0))) 
-                { 
-                  //게임 재시작
-                }
-                else if (Input.GetKeyDown(KeyCode.E)) 
+                if (Input.GetKeyDown(KeyCode.Space)) 
                 {
-                    SceneManager.LoadScene("MainScene");
+                    game1GameManager.RestartGame();
+                }
+                else if(Input.GetKeyDown(KeyCode.E)) 
+                { 
+                    game1GameManager.EndGame();
                 }
             }
             else 
@@ -89,5 +93,6 @@ public class Minigame1Player : MonoBehaviour
         isDead = true;
 
         deathCooldown = 1f;
+        game1GameManager.GameOver();
     }
 }
