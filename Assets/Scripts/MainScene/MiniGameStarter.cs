@@ -18,7 +18,7 @@ public class MiniGameStarter : MonoBehaviour
 
     void Update()
     {
-        if(inputLoadScene = true) 
+        if(inputLoadScene == true) 
         {
             CheckLoadScene();
         }

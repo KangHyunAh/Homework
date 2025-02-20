@@ -2846,7 +2846,7 @@ Transform:
   m_GameObject: {fileID: 530716392}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.7, y: -4.2, z: 0.08752632}
+  m_LocalPosition: {x: -3.7000003, y: -4.2, z: 0.08752632}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2963,6 +2963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: MiniGame1
   GameLoadingText: {fileID: 1278097707}
+  inputLoadScene: 0
 --- !u!1 &827577150
 GameObject:
   m_ObjectHideFlags: 0
@@ -3294,6 +3295,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneName: MiniGame2
   GameLoadingText: {fileID: 1278097707}
+  inputLoadScene: 0
 --- !u!1 &1112043245
 GameObject:
   m_ObjectHideFlags: 0

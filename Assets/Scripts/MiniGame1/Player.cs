@@ -13,6 +13,8 @@ public class Minigame1Player : MonoBehaviour
     float deathCooldown = 0f;
 
     bool isFlap = false;
+
+    public bool godMode = false;
     
     void Start()
     {
@@ -72,13 +74,16 @@ public class Minigame1Player : MonoBehaviour
         _rigidbody.velocity = velocity;
 
         float angle = Mathf.Clamp((_rigidbody.velocity.y * 10f), -90, 90);
-        float lerpAngle = Mathf.Lerp(transform.rotation.eulerAngles.z, angle, Time.fixedDeltaTime * 5f);
-        transform.rotation = Quaternion.Euler(0,0,lerpAngle);
+        //float lerpAngle = Mathf.Lerp(transform.rotation.eulerAngles.z, angle, Time.fixedDeltaTime * 0.05f);
+        transform.rotation = Quaternion.Euler(0,0,angle);
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if(isDead)
+        if (godMode)
+            return;
+
+        if (isDead)
             return;
 
         isDead = true;
